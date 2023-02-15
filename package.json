@@ -1,0 +1,67 @@
+{
+	"name": "openrct2-pet-paint-plugin",
+	"author": "ltsSmitty",
+	"license": "MIT",
+	"version": "1.0.0",
+	"description": "",
+	"main": "app.js",
+	"scripts": {
+		"start": "npm run watch",
+		"watch": "nodemon --watch ./src --ext js,ts",
+		"build": "npm run lint && rollup --config rollup.config.js --environment BUILD:production",
+		"build:dev": "rollup --config rollup.config.js",
+		"lint": "eslint ./src --ext .js --ext .ts",
+		"test": "nyc ava"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/Basssiiie/OpenRCT2-RideVehicleEditor.git"
+	},
+	"homepage": "https://github.com/Basssiiie/OpenRCT2-RideVehicleEditor#readme",
+	"bugs": {
+		"url": "https://github.com/Basssiiie/OpenRCT2-RideVehicleEditor/issues"
+	},
+	"dependencies": {
+		"lodash-es": "^4.17.21",
+		"openrct2-flexui": "^0.1.0-prerelease.9"
+	},
+	"devDependencies": {
+		"@ava/typescript": "^3.0.1",
+		"@babel/core": "^7.16.0",
+		"@babel/preset-env": "^7.16.0",
+		"@babel/preset-typescript": "^7.16.0",
+		"@rollup/plugin-babel": "^5.3.0",
+		"@rollup/plugin-commonjs": "^22.0.2",
+		"@rollup/plugin-node-resolve": "^13.0.6",
+		"@rollup/plugin-replace": "^4.0.0",
+		"@rollup/plugin-typescript": "^8.2.5",
+		"@types/lodash-es": "^4.17.6",
+		"@typescript-eslint/eslint-plugin": "^5.2.0",
+		"@typescript-eslint/parser": "^5.2.0",
+		"ava": "^4.3.1",
+		"eslint": "^8.1.0",
+		"eslint-plugin-import": "^2.24.0",
+		"nodemon": "^2.0.12",
+		"nyc": "^15.1.0",
+		"openrct2-mocks": "^0.1.0",
+		"platform-folders": "^0.6.0",
+		"rollup": "^2.56.2",
+		"rollup-plugin-terser": "^7.0.2",
+		"ts-node": "^10.2.1",
+		"tslib": "^2.3.1",
+		"typescript": "^4.3.5"
+	},
+	"ava": {
+		"extensions": [
+			"ts"
+		],
+		"files": [
+			"tests/**/*.tests.ts"
+		],
+		"require": [
+			"./tests/_setup.js",
+			"ts-node/register"
+		],
+		"verbose": true
+	}
+}
